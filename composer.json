@@ -1,0 +1,27 @@
+{
+    "name": "rsthn/rose-qr",
+    "description": "Bacon QR Adapter for Rose",
+    "version": "1.0.0",
+    "type": "rose-extension",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Jonathan Palencia",
+            "email": "strikeone88@rsthn.com"
+        }
+    ],
+    "extra": {
+        "rose-ext-identifier": "QR"
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "rsthn/rose-extension-installer": "*",
+        "php": "^8.1",
+        "bacon/bacon-qr-code": "^2.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "rsthn/rose-extension-installer": true
+        }
+    }
+}
