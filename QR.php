@@ -12,30 +12,31 @@ use Rose\Expr;
 
 /**
  * Generates a new QR code an returns an SVG image data string.
- * (qr::create :contents)
+ * (qr:create <contents>)
  */
-Expr::register('qr::create', function ($args)
+Expr::register('qr:create', function ($args)
 {
-	$renderer = new ImageRenderer(
-		new RendererStyle(400),
-		new SvgImageBackEnd()
-	);
+    $renderer = new ImageRenderer(
+        new RendererStyle(400),
+        new SvgImageBackEnd()
+    );
 
-	$writer = new Writer($renderer);
-	return $writer->writeString($args->get(1));
+    $writer = new Writer($renderer);
+    return $writer->writeString($args->get(1));
 });
+
 
 /**
  * Generates a new QR code an returns an SVG data-URI string.
- * (qr::uri :contents)
+ * (qr:uri <contents>)
  */
-Expr::register('qr::uri', function ($args)
+Expr::register('qr:uri', function ($args)
 {
-	$renderer = new ImageRenderer(
-		new RendererStyle(400),
-		new SvgImageBackEnd()
-	);
+    $renderer = new ImageRenderer(
+        new RendererStyle(400),
+        new SvgImageBackEnd()
+    );
 
-	$writer = new Writer($renderer);
-	return "data:image/svg+xml;base64,".base64_encode($writer->writeString($args->get(1)));
+    $writer = new Writer($renderer);
+    return "data:image/svg+xml;base64,".base64_encode($writer->writeString($args->get(1)));
 });
